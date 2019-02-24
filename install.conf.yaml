@@ -1,0 +1,6 @@
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/workspace, Creating ~/workspace directory]
+
