@@ -1,3 +1,9 @@
+- defaults:
+    link:
+      relink: true
+    shell:
+      stdout: true
+
 - clean: ['~']
 
 - shell:
@@ -6,4 +12,10 @@
   - [mkdir -p ~/scratch, Creating ~/scratch directory]
 
 - link:
+    ~/.gitignore: config/gitignore
+    ~/.gitconfig:
+      path: config/gitconfig
+      force: true
+    ~/.git-authors: config/git-authors
+    ~/.hushlogin: config/hushlogin
     ~/Library/Preferences/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist

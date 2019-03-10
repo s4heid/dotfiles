@@ -1,0 +1,9 @@
+authors:
+  sh: Sebastian Heid
+  db: Danny Berger
+
+email_addresses:
+  sh: sebastian.heid45@gmail.com
+  db: dberger@pivotal.io
+
+global: true
