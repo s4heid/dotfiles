@@ -1,11 +1,24 @@
 #!/usr/bin/env bash
 
 
-alias vi=nvim
-alias vim=nvim
+alias vi='nvim'
+alias vim='nvim'
 
 alias ll='ls -la'
 alias be='bundle exec'
+alias tmate-info="tmate display -p '#{tmate_ssh}'"
+
+# Display local ip address
+alias localip="ipconfig getifaddr en0"
+
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+_serve() {
+  local port="${1:-8888}"
+  open "http://localhost:${port}/"
+  python -m http.server "$port"
+}
+alias serve=_serve
 
 eval "$(fasd --init auto)"
 alias v='f -e nvim'
