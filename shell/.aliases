@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+alias vi=nvim
+alias vim=nvim
+
+alias ll='ls -la'
+alias be='bundle exec'
+
+eval "$(fasd --init auto)"
+alias v='f -e nvim'

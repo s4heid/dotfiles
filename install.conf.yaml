@@ -12,6 +12,8 @@
   - [mkdir -p ~/scratch, Creating ~/scratch directory]
 
 - link:
+    ~/.bash_profile: config/bash_profile
+    ~/.bash_prompt: config/bash_prompt
     ~/.gitignore: config/gitignore
     ~/.gitconfig:
       path: config/gitconfig
@@ -19,3 +21,6 @@
     ~/.git-authors: config/git-authors
     ~/.hushlogin: config/hushlogin
     ~/Library/Preferences/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist
+
+- shell:
+  - [./scripts/install-ruby, Installing rvm and ruby]

@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+# ::: Compiler flags :::
+
+# # This is required because `openssl` is keg-only in `brew`,
+# # see: `brew info openssl` for more information.
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+
+# ::: Path modifications :::
+
+# prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
+export PATH="/usr/local/bin:$PATH"
+
+# homebrew installs some apps into /usr/local/sbin, e.g. openvpn
+export PATH="/usr/local/sbin:$PATH"
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+# have rvm at the last place, so it doesn't complain about the order in PATH on every call
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH=$(brew --prefix openvpn)/sbin:$PATH
+
+
+# ::: Version managers :::
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+source "/usr/local/opt/nvm/nvm.sh"
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# pyenv
+eval "$(pyenv init -)"
+
+
+# ::: History :::
+
+export HISTCONTROL=ignoredups
+export HISTIGNORE="$HISTIGNORE:ls:cd"
+export HISTSIZE=950000                             # number of commands to remember in history
+export HISTFILESIZE=950000                         # number of lines in history file
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND" # always save history after every command
+
+
+# ::: Git Duet :::
+
+# set git-duet to operate on global gitconfig
+export GIT_DUET_GLOBAL=true
+# set git-duet to rotate between author and committer after each commit
+export GIT_DUET_ROTATE_AUTHOR=1
+# use a Co-authored-by trailer rather than a Signed-off-by trailer
+export GIT_DUET_CO_AUTHORED_BY=1
+# is also implicitly set by GIT_DUET_CO_AUTHORED_BY
+export GIT_DUET_SET_GIT_USER_CONFIG=1
+# override the default value addIfDifferentNeighbor to avoid duplicate Co-authored-by trailers
+git config --global trailer.ifexists addIfDifferent
+
+
+# ::: Python :::
+
+# virtualenvwrapper and pip
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Tell pyenv-virtualenvwrapper to use pyenv when creating new virtual environments
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+
+
+# ::: Others :::
+
+export EDITOR=nvim
+
+export LC_ALL=en_US.UTF-8
+
+export HOMEBREW_NO_ANALYTICS=1
+
+# logout from lpass after 8 hours
+export LPASS_AGENT_TIMEOUT=28800
