@@ -24,3 +24,5 @@
 
 - shell:
   - [./scripts/install-ruby, Installing rvm and ruby]
+  - [./scripts/install-tools, Installing tools]
+  - [./scripts/install-fonts, Installing powerline fonts]

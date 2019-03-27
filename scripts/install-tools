@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+echo "Install Homebrew..."
+if [[ -z "$(which brew)" ]]; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Run the Brewfile..."
+brew update
+brew tap Homebrew/bundle
+ln -sf $(pwd)/Brewfile ${HOME}/.Brewfile
+
+brew bundle --global
+brew cleanup
+
+echo "Install bundler gem..."
+gem install bundler
+
+echo "Install the neovim gem..."
+gem install neovim
+
+echo "Installing ripper-tags..."
+gem install ripper-tags
+
+echo "Install ginkgo..."
+go get -u github.com/onsi/ginkgo/ginkgo
+
+echo "Install gomega..."
+go get -u github.com/onsi/gomega
