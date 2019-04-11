@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pip3 install --upgrade --no-deps --force-reinstall neovim
+npm install -g neovim
+
+mkdir -p ~/.config
+if [[ ! -d ~/.config/nvim ]]; then
+  git clone https://github.com/luan/nvim ~/.config/nvim
+fi
