@@ -31,3 +31,4 @@
   - [./scripts/install-tools, Installing tools]
   - [./scripts/install-fonts, Installing powerline fonts]
   - [./scripts/install-nvim, Installing neovim]
+  - [./scripts/install-tmux, Installing tmux]

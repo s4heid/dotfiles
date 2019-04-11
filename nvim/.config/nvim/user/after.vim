@@ -21,6 +21,9 @@ function HeaderPython()
 endf
 autocmd bufnewfile *.py call HeaderPython()
 
+nmap <Leader>fbp :Rg binding.pry<CR>
+iabbr bpry require'pry';binding.pry
+map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
 
 colorscheme base16-material
 let g:lightline = {

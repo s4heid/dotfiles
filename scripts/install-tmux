@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ ! -d ~/.config/tmux ]]; then
+  git clone https://github.com/luan/tmuxfiles ~/.config/tmux
+  rm ~/.config/tmux.conf 2> /dev/null || true
+fi
+
+echo "Installing tmux..."
+
+(cd ~/.config/tmux && ./install)
