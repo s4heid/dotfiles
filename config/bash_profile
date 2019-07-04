@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+    source $(brew --prefix)/etc/bash_completion
 fi
 
+source "$HOME/.bash_prompt"
 
-source "$HOME/bash_prompt"
+source "$HOME/.shell/.aliases"
+source "$HOME/.shell/.exports"
+source "$HOME/.shell/.functions"
 
-source "$HOME/dotfiles/shell/.aliases"
-source "$HOME/dotfiles/shell/.exports"
-source "$HOME/dotfiles/shell/.functions"
-
-
-# Load direnv, to switch gopath based on .direnv files in the current dir
 eval "$(direnv hook $0)"

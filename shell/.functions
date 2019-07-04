@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 
 pyclean () {
@@ -16,7 +16,7 @@ story() {
     if [ "$#" -eq 1 ]; then
         echo -e "\n\n[#"$1"](https://www.pivotaltracker.com/story/show/"$1")" > ~/.gitmessage
     else
-        echo -n > ~/.gitmessage
+        :> ~/.gitmessage
     fi
 }
 
@@ -30,26 +30,26 @@ stackoverflow() {
 
 man() {
   env \
-	LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-	LESS_TERMCAP_md=$(printf "\e[1;31m") \
-	LESS_TERMCAP_me=$(printf "\e[0m") \
-	LESS_TERMCAP_se=$(printf "\e[0m") \
-	LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-	LESS_TERMCAP_ue=$(printf "\e[0m") \
-	LESS_TERMCAP_us=$(printf "\e[1;32m") \
-	man "$@"
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+  man "$@"
 }
 
 _bosh() {
-        # All arguments except the first one
-        args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
+    # All arguments except the first one
+    args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
 
-        # Only split on newlines
-        local IFS=$'\n'
-        # Call completion (note that the first element of COMP_WORDS is
-        # the executable itself)
-        COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
-        return 1
+    # Only split on newlines
+    local IFS=$'\n'
+    # Call completion (note that the first element of COMP_WORDS is
+    # the executable itself)
+    COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
+    return 1
 }
 
 complete -o default -F _bosh bosh

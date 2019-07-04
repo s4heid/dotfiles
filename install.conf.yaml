@@ -14,6 +14,9 @@
 - link:
     ~/.bash_profile: config/bash_profile
     ~/.bash_prompt: config/bash_prompt
+    ~/.shell:
+      path: shell
+      create: true
     ~/.config/nvim/user:
       path: nvim/.config/nvim/user/*
       create: true

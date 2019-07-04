@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/env sh
 
 alias vi='nvim'
 alias vim='nvim'

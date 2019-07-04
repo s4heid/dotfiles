@@ -85,4 +85,4 @@
   separator = red
   selected = white
 [trailer]
-  ifexists = addIfDifferent
+	ifexists = addIfDifferent
