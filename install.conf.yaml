@@ -18,6 +18,7 @@
     ~/.shell:
       path: shell
       create: true
+    ~/.zshrc: zsh/zshrc
     ~/.tmux.conf: config/tmux.conf
     ~/.config/nvim/user:
       path: nvim/.config/nvim/user/*
