@@ -27,6 +27,9 @@
       force: true
     ~/.git-authors: config/git-authors
     ~/.hushlogin: config/hushlogin
+    ~/.ssh/config:
+      path: ssh/config
+      create: true
     ~/Library/Preferences/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist
 
 - shell:
