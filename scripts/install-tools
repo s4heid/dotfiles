@@ -8,8 +8,6 @@ fi
 echo "Run the Brewfile..."
 brew update
 brew tap Homebrew/bundle
-ln -sf $(pwd)/Brewfile ${HOME}/.Brewfile
-
 brew bundle --global
 brew cleanup
 

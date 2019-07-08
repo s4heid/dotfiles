@@ -12,6 +12,7 @@
   - [mkdir -p ~/scratch, Creating ~/scratch directory]
 
 - link:
+    ~/.Brewfile: Brewfile
     ~/.bash_profile: config/bash_profile
     ~/.bash_prompt: config/bash_prompt
     ~/.shell:
@@ -22,6 +23,7 @@
       path: nvim/.config/nvim/user/*
       create: true
       glob: true
+    ~/.gemrc: config/gemrc
     ~/.gitignore: config/gitignore
     ~/.gitconfig:
       path: config/gitconfig

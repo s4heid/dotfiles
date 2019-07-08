@@ -2,9 +2,3 @@
 
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install 2.4.5 --with-openssl-dir=`brew --prefix openssl`
-
-# don't install gem documentation, that takes often longer than the gem itself
-tee ~/.gemrc <<EOF
----
-gem: --no-ri --no-rdoc
-EOF
