@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ ! -d ~/.config/tmux ]]; then
-  git clone https://github.com/luan/tmuxfiles ~/.config/tmux
-  rm ~/.config/tmux.conf 2> /dev/null || true
+set -e
+
+if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-echo "Installing tmux..."
-
-(cd ~/.config/tmux && ./install)
+$HOME/.tmux/plugins/tpm/bin/install_plugins
+$HOME/.tmux/plugins/tpm/bin/update_plugins all
+$HOME/.tmux/plugins/tpm/bin/clean_plugins
