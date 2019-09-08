@@ -1,0 +1,10 @@
+code --install-extension ms-vscode.go
+code --install-extension ms-python.python
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ms-vscode.vscode-typescript-tslint-plugin
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension pivotal.vscode-bosh
+code --install-extension pivotal.vscode-concourse
+code --install-extension rebornix.ruby
+code --install-extension dbaeumer.vscode-eslint

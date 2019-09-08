@@ -1,0 +1,15 @@
+{
+  "cSpell.showStatus": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "extensions.ignoreRecommendations": true,
+  "python.linting.enabled": false,
+  "python.terminal.activateEnvironment": true,
+  "python.workspaceSymbols.enabled": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
+}

@@ -34,6 +34,9 @@
       path: ssh/config
       create: true
     ~/Library/Preferences/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist
+    "~/Library/Application Support/Code/User/settings.json":
+        path: config/settings.json
+        create: true
 
 - shell:
   - [./scripts/install-ruby, Installing rvm and ruby]
@@ -41,3 +44,4 @@
   - [./scripts/install-fonts, Installing powerline fonts]
   - [./scripts/install-nvim, Installing neovim]
   - [./scripts/install-tmux, Installing tmux]
+  - [./scripts/install-vscode-plugins, Installing vscode plugins]
