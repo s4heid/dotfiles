@@ -3,6 +3,8 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontSize": 14,
   "extensions.ignoreRecommendations": true,
+  "files.autoSave": "onFocusChange",
+  "go.useLanguageServer": true,
   "python.linting.enabled": false,
   "python.terminal.activateEnvironment": true,
   "python.workspaceSymbols.enabled": true,
