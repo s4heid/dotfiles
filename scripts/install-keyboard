@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+file="USGerman Keyboard Layout 0.98"
+
+# src: https://hci.rwth-aachen.de/usgermankeyboard
+curl -O -L -J "https://hci.rwth-aachen.de/index.php?option=com_attachments&task=download&id=793"
+
+unzip -o "$file".zip
+
+sudo rm -rf '/Library/Keyboard Layouts/'
+sudo mv "$file"/Roman.bundle '/Library/Keyboard Layouts/'
+
+rm -rf "$file"*
+
+# sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
