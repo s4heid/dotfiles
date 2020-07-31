@@ -10,4 +10,27 @@ source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.exports"
 source "$HOME/.shell/.functions"
 
+_bosh() {
+    args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
+    local IFS=$'\n'
+    COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
+    return 1
+}
+complete -o default -F _bosh bosh
+
+# adds PRs as remotes
+pullify() {
+    command git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*';
+    command git fetch origin
+}
+
+# sets gitmessage with story info
+story() {
+    if [ "$#" -eq 1 ]; then
+        echo -e "\n\n[#"$1"](https://www.pivotaltracker.com/story/show/"$1")" > ~/.gitmessage
+    else
+        :> ~/.gitmessage
+    fi
+}
+
 eval "$(direnv hook $0)"

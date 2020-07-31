@@ -25,6 +25,8 @@ nmap <Leader>fbp :Rg binding.pry<CR>
 iabbr bpry require'pry';binding.pry
 map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
 
+set nonumber " No line numbers
+set background=dark
 colorscheme base16-material
 let g:lightline = {
       \ 'colorscheme': 'material',

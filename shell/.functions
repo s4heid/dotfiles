@@ -5,19 +5,10 @@ pyclean() {
     find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
 }
 
-# adds PRs as remotes
-pullify() {
-    command git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*';
-    command git fetch origin
-}
-
-# sets gitmessage with story info
-story() {
-    if [ "$#" -eq 1 ]; then
-        echo -e "\n\n[#"$1"](https://www.pivotaltracker.com/story/show/"$1")" > ~/.gitmessage
-    else
-        :> ~/.gitmessage
-    fi
+# cleans dangling docker containers and images
+dclean() {
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
 
 google() {
@@ -40,16 +31,3 @@ man() {
   man "$@"
 }
 
-_bosh() {
-    # All arguments except the first one
-    args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
-
-    # Only split on newlines
-    local IFS=$'\n'
-    # Call completion (note that the first element of COMP_WORDS is
-    # the executable itself)
-    COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
-    return 1
-}
-
-complete -o default -F _bosh bosh
