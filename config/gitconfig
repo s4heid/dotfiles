@@ -87,6 +87,8 @@
 [trailer]
 	ifexists = addIfDifferent
 [init]
-	templatedir = $HOME/.git-template
+	templatedir = "$HOME"/.git-template
 [gpg]
 	program = gpg
+[pull]
+	ff = only

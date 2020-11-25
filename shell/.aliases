@@ -21,3 +21,4 @@ alias serve=_serve
 
 eval "$(fasd --init auto)"
 alias v='f -e nvim'
+alias idea="open -na \"IntelliJ IDEA CE.app\" --args \"$*\""
