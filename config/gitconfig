@@ -86,9 +86,9 @@
   selected = white
 [trailer]
 	ifexists = addIfDifferent
-[init]
-	templatedir = "$HOME"/.git-template
-[gpg]
-	program = gpg
 [pull]
-	ff = only
+  ff = only
+[init]
+	templatedir = /Users/d061008/.git-template
+[gpg]
+  program = gpg

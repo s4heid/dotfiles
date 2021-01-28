@@ -33,4 +33,4 @@ story() {
     fi
 }
 
-eval "$(direnv hook $0)"
+eval "$(direnv hook bash)"
