@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # ::: Compiler flags :::
 
@@ -18,27 +18,28 @@ export PATH="/usr/local/bin:$PATH"
 # homebrew installs some apps into /usr/local/sbin, e.g. openvpn
 export PATH="/usr/local/sbin:$PATH"
 
+# golang
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
+# java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/sapmachine-11.jdk/Contents/Home
 export PATH="$PATH:$JAVA_HOME/bin"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH=$(brew --prefix openvpn)/sbin:$PATH
-
+export PATH=/usr/local/opt/openvpn/sbin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # ::: Version managers :::
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# source "/usr/local/opt/nvm/nvm.sh"
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # pyenv
 eval "$(pyenv init -)"
@@ -68,15 +69,6 @@ git config --global trailer.ifexists addIfDifferent
 
 
 # ::: Python :::
-
-# virtualenvwrapper and pip
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-# Tell pyenv-virtualenvwrapper to use pyenv when creating new virtual environments
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python"

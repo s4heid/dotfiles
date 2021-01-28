@@ -40,9 +40,9 @@ DIRSTACKSIZE=20
 setopt autopushd pushdsilent pushdtohome pushdignoredups pushdminus
 alias dirs='dirs -v'
 
-source "$HOME/.shell/.aliases"
-source "$HOME/.shell/.exports"
-source "$HOME/.shell/.functions"
+source "$HOME/.shell/aliases"
+source "$HOME/.shell/exports"
+source "$HOME/.shell/functions"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(direnv hook zsh)"

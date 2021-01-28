@@ -1,8 +1,7 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 alias vi='nvim'
 alias vim='nvim'
-
 alias ll='ls -la'
 alias be='bundle exec'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
@@ -13,7 +12,7 @@ alias localip="ipconfig getifaddr en0"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 _serve() {
-  local port="${1:-8888}"
+  port="${1:-8888}"
   open "http://localhost:${port}/"
   python -m http.server "$port"
 }
