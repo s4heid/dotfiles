@@ -40,9 +40,20 @@ DIRSTACKSIZE=20
 setopt autopushd pushdsilent pushdtohome pushdignoredups pushdminus
 alias dirs='dirs -v'
 
+autoload bashcompinit
+bashcompinit
+
+autoload -U +X compinit && compinit
+source <(kubectl completion zsh)
+
 source "$HOME/.shell/aliases"
 source "$HOME/.shell/exports"
 source "$HOME/.shell/functions"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(direnv hook zsh)"
+source ~/.shell/vault-helpers.sh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)

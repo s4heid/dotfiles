@@ -9,7 +9,6 @@
   git-author-email = sebastian.heid45@gmail.com
 [core]
   editor = nvim
-  whitespace = fix,-indent-with-non-tab,trailing-space
   excludesfile = /Users/s4heid/.gitignore
 [alias]
   st = status
@@ -90,5 +89,6 @@
   ff = only
 [init]
 	templatedir = /Users/d061008/.git-template
+	defaultBranch = main
 [gpg]
   program = gpg

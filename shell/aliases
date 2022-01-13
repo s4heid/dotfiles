@@ -6,6 +6,16 @@ alias ll='ls -la'
 alias be='bundle exec'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
 
+alias k='kubectl'
+complete -F __start_kubectl k
+alias kns='kubectl config set-context --current --namespace '
+alias kf='kubectl create -f'
+alias ks='kubectl run shell --image=ellerbrock/alpine-bash-curl-ssl -- tail -f /dev/null'
+
+# url decode / encode
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
+
 # Display local ip address
 alias localip="ipconfig getifaddr en0"
 

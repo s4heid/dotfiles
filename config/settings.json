@@ -1,7 +1,7 @@
 {
   "cSpell.showStatus": false,
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 13,
+  "editor.fontSize": 14,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "extensions.ignoreRecommendations": true,
@@ -21,11 +21,23 @@
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": false,
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "python.dataScience.sendSelectionToInteractiveWindow": true,
   "liveshare.sharedTerminalHeight": 120,
   "javascript.format.enable": false,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": null,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "java.home": "/Library/Java/JavaVirtualMachines/sapmachine-11.jdk/Contents/Home"
+  "java.home": "/Library/Java/JavaVirtualMachines/sapmachine-11.jdk/Contents/Home",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.languageServer": "Pylance",
+  "java.semanticHighlighting.enabled": true,
+  "workbench.colorTheme": "Material Theme",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "explorer.confirmDelete": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.editor.showTabs": false
 }

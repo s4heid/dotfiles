@@ -34,3 +34,5 @@ story() {
 }
 
 eval "$(direnv hook bash)"
+
+complete -C /usr/local/bin/vault vault
