@@ -3,13 +3,15 @@
       relink: true
     shell:
       stdout: true
+      stderr: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [mkdir -p ~/workspace, Creating ~/workspace directory]
-  - [mkdir -p ~/scratch, Creating ~/scratch directory]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [mkdir -p ~/workspace, Creating ~/workspace directory]
+    - [mkdir -p ~/scratch, Creating ~/scratch directory]
+    - [mkdir -p ~/git-template, Creating git template directory]
 
 - link:
     ~/.Brewfile: Brewfile
@@ -18,10 +20,12 @@
     ~/.shell:
       path: shell
       create: true
-    ~/.zshrc: zsh/zshrc
+    ~/.zshrc:
+      path: zsh/zshrc
+      create: true
     ~/.tmux.conf: config/tmux.conf
-    ~/.config/nvim/user:
-      path: nvim/.config/nvim/user/*
+    ~/.config/nvim/lua/user:
+      path: nvim/.config/nvim/lua/user/*
       create: true
       glob: true
     ~/.gemrc: config/gemrc
@@ -33,16 +37,20 @@
     ~/.hushlogin: config/hushlogin
     ~/.ssh/config:
       path: ssh/config
+      force: true
       create: true
-    ~/Library/Preferences/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist
+    ~/.gnupg/gpg-agent.conf:
+      path: config/gpgagent
+      force: true
+      create: true
     "~/Library/Application Support/Code/User/settings.json":
-        path: config/settings.json
-        create: true
+      path: vscode/settings.json
+      force: true
+      create: true
 
 - shell:
-  - [./scripts/install-ruby, Installing rvm and ruby]
-  - [./scripts/install-tools, Installing tools]
-  - [./scripts/install-fonts, Installing powerline fonts]
-  - [./scripts/install-nvim, Installing neovim]
-  - [./scripts/install-tmux, Installing tmux]
-  - [./scripts/install-vscode-plugins, Installing vscode plugins]
+    - [./scripts/install-tools, Installing tools]
+    - [./scripts/install-nvim, Installing neovim]
+    - [./scripts/install-tmux, Installing tmux]
+    - [./scripts/install-vscode-plugins, Installing vscode plugins]
+    - [./scripts/setup-macos, Configuring macos settings]

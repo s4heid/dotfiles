@@ -3,10 +3,6 @@
   email = sebastian.heid45@gmail.com
 [github]
   user = s4heid
-[duet "env"]
-  git-author-initials = sh
-  git-author-name = Sebastian Heid
-  git-author-email = sebastian.heid45@gmail.com
 [core]
   editor = nvim
   excludesfile = /Users/s4heid/.gitignore

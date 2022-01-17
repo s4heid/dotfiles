@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-pip3 install --upgrade --no-deps --force-reinstall neovim
+set -e
+
+pip install --upgrade --no-deps --force-reinstall neovim
+pip install --upgrade pynvim
+
 npm install -g neovim
+
+# gem install neovim
 
 mkdir -p ~/.config
 if [[ ! -d ~/.config/nvim ]]; then

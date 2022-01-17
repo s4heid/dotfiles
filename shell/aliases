@@ -6,8 +6,7 @@ alias ll='ls -la'
 alias be='bundle exec'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
 
-alias k='kubectl'
-complete -F __start_kubectl k
+alias k='kubectl' && complete -F __start_kubectl k
 alias kns='kubectl config set-context --current --namespace '
 alias kf='kubectl create -f'
 alias ks='kubectl run shell --image=ellerbrock/alpine-bash-curl-ssl -- tail -f /dev/null'
@@ -28,6 +27,6 @@ _serve() {
 }
 alias serve=_serve
 
-eval "$(fasd --init auto)"
-alias v='f -e nvim'
+eval "$(fasd --init auto)" && alias v='f -e nvim'
+
 alias idea="open -na \"IntelliJ IDEA CE.app\" --args \"$*\""

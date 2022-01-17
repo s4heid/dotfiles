@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Hide remaining battery time; show percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+
+# ::: Dock :::
+# Dock icon size of 36 pixels.
+defaults write com.apple.dock "tilesize" -int "36"
+
+# Autohide the Dock when the mouse is out
+defaults write com.apple.dock "autohide" -bool "true"
+
+# Remove the Dock autohide animation
+defaults write com.apple.dock "autohide-time-modifier" -float "0"
+
+# Do not display recent apps in the Dock
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# ::: Finder :::
+# Display the Finder "Quit" option
+defaults write com.apple.finder "QuitMenuItem" -bool "true"
+
+# Show hidden files inside the Finder
+defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
+
+# Do not display a warning when changing a file extension in the Finder
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+# http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/workspace/dotfiles/iterm"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+
+# ::: Restart :::
+killall Dock
+killall Finder
+killall SystemUIServer

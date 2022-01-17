@@ -2,7 +2,7 @@
 
 source <(antibody init)
 
-antibody bundle zdharma/fast-syntax-highlighting
+antibody bundle zdharma-continuum/fast-syntax-highlighting
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-history-substring-search
 antibody bundle zsh-users/zsh-completions
@@ -40,20 +40,21 @@ DIRSTACKSIZE=20
 setopt autopushd pushdsilent pushdtohome pushdignoredups pushdminus
 alias dirs='dirs -v'
 
-autoload bashcompinit
-bashcompinit
-
 autoload -U +X compinit && compinit
-source <(kubectl completion zsh)
+autoload -U +X bashcompinit && bashcompinit
 
 source "$HOME/.shell/aliases"
 source "$HOME/.shell/exports"
 source "$HOME/.shell/functions"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(direnv hook zsh)"
-source ~/.shell/vault-helpers.sh
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+# direnv
+eval "$(direnv hook zsh)"
+
+# vault completion
+complete -o nospace -C /opt/homebrew/opt/vault vault
+
+# kubectl completion
+[ -f /opt/homebrew/bin/kubectl ] && source <(kubectl completion zsh)

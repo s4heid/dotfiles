@@ -1,6 +1,6 @@
 {
   "cSpell.showStatus": false,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Source Code Pro",
   "editor.fontSize": 14,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
@@ -17,7 +17,6 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Material Theme",
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": false,
   "terminal.integrated.shell.osx": "/bin/zsh",
@@ -31,7 +30,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.languageServer": "Pylance",
   "java.semanticHighlighting.enabled": true,
-  "workbench.colorTheme": "Material Theme",
+  "workbench.colorTheme": "Material Theme High Contrast",
   "java.configuration.checkProjectSettingsExclusions": false,
   "jupyter.sendSelectionToInteractiveWindow": true,
   "explorer.confirmDelete": false,
@@ -39,5 +38,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "go.toolsManagement.autoUpdate": true,
+  "material-icon-theme.folders.color": "#ef5350",
   "workbench.editor.showTabs": false
 }

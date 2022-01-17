@@ -1,17 +1,2 @@
-code --install-extension --force ms-vscode.go
-code --install-extension --force ms-python.python
-code --install-extension --force ms-azuretools.vscode-docker
-code --install-extension --force ms-vsliveshare.vsliveshare
-code --install-extension --force ms-vscode.vscode-typescript-tslint-plugin
-code --install-extension --force ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension --force ms-toolsai.jupyter
-code --install-extension --force pivotal.vscode-concourse
-code --install-extension --force rebornix.ruby
-code --install-extension --force dbaeumer.vscode-eslint
-code --install-extension --force eamodio.gitlens
-code --install-extension --force vscjava.vscode-java-pack
-code --install-extension --force hediet.vscode-drawio
-code --install-extension --force hashicorp.terraform
-code --install-extension --force onsi.vscode-ginkgo
-code --install-extension --force davidanson.vscode-markdownlint
-code --install-extension --force yzhang.markdown-all-in-one
+#!/usr/bin/env bash
+cat vscode/extensions.txt | xargs -P8 -I{} code --install-extension {} --force

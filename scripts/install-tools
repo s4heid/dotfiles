@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo "Install Homebrew..."
-if [[ -z "$(which brew)" ]]; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! command -v brew &> /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 echo "Run the Brewfile..."
@@ -11,17 +11,31 @@ brew tap Homebrew/bundle
 brew bundle --global
 brew cleanup
 
-echo "Install bundler gem..."
-gem install bundler
+echo "Install fuzzy finder"
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-fish --no-update-rc
 
-echo "Install the neovim gem..."
-gem install neovim
+echo "Install python..."
+py_version="3.10.1"
+if pyenv versions | grep -sq "$py_version"; then
+  pyenv install "$py_version"
+else
+  echo "Python $py_version already installed"
+  pyenv versions
+fi
 
-echo "Installing ripper-tags..."
-gem install ripper-tags
+if pyenv which python | grep -sq "$py_version"; then
+  pyenv global "$py_version"
+else
+  echo "Using global python version: $(python -V)"
+fi
 
-echo "Install ginkgo..."
-go get -u github.com/onsi/ginkgo/ginkgo
+echo "Install cf CLI..."  # install via brew, once formula is M1 chip compatible
+cd /tmp
+curl -Ls "https://packages.cloudfoundry.org/stable?release=macosx64-binary&version=v7&source=github" | tar -zx
+mv cf7 /usr/local/bin/cf
+cf version
+cd -
 
-echo "Install gomega..."
-go get -u github.com/onsi/gomega
+# echo "Install gems..."
+# gem install bundler
+# gem install neovim

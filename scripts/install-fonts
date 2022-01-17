@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-rm -rf ~/.config/fonts
-
-git clone https://github.com/powerline/fonts.git ~/.config/fonts --depth=1
-
-pushd ~/.config/fonts
-  ./install.sh
-popd
