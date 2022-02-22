@@ -12,7 +12,7 @@ brew bundle --global
 brew cleanup
 
 echo "Install fuzzy finder"
-$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-fish --no-update-rc
+$(brew --prefix fzf)/install --key-bindings --completion --no-fish --no-update-rc
 
 echo "Install python..."
 py_version="3.10.1"

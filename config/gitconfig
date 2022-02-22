@@ -5,7 +5,7 @@
   user = s4heid
 [core]
   editor = nvim
-  excludesfile = /Users/s4heid/.gitignore
+  excludesfile = ~/.gitignore
 [alias]
   st = status
   ci = commit -v
@@ -31,6 +31,8 @@
   fullName = true
 [commit]
   template = ~/.gitmessage
+[credential]
+  helper = osxkeychain
 [push]
   default = simple
   recurseSubmodules = check
@@ -84,7 +86,7 @@
 [pull]
   ff = only
 [init]
-	templatedir = /Users/d061008/.git-template
-	defaultBranch = main
+  templatedir = ~/.git-template
+  defaultBranch = main
 [gpg]
   program = gpg

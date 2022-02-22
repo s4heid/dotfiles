@@ -2,16 +2,18 @@
 
 set -e
 
-file="USGerman Keyboard Layout 0.98"
+mkdir ./tmp && cd tmp
 
 # src: https://hci.rwth-aachen.de/usgermankeyboard
-curl -O -L -J "https://hci.rwth-aachen.de/index.php?option=com_attachments&task=download&id=793"
+curl -O -L -J "https://hci.rwth-aachen.de/index.php?option=com_attachments&task=download&id=2764"
 
-unzip -o "$file".zip
+layout="USGerman Keyboard Layout 0.98 Retina"
+unzip -o "$layout".zip
 
 sudo rm -rf '/Library/Keyboard Layouts/'
-sudo mv "$file"/Roman.bundle '/Library/Keyboard Layouts/'
+sudo mkdir -p '/Library/Keyboard Layouts/'
+sudo cp -R "$layout"/Roman.bundle '/Library/Keyboard Layouts/'
 
-rm -rf "$file"*
+cd - && rm -rf ./tmp
 
 # sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/

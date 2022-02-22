@@ -29,6 +29,7 @@
       create: true
       glob: true
     ~/.gemrc: config/gemrc
+    ~/.nvmrc: config/nvmrc
     ~/.gitignore: config/gitignore
     ~/.gitconfig:
       path: config/gitconfig

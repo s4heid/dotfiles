@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-
 pyclean() {
     find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
 }
@@ -18,4 +17,3 @@ google() {
 stackoverflow() {
     open -na "Google Chrome" --args "https://www.google.com/search?q=site:stackoverflow.com $*"
 }
-
