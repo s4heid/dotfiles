@@ -5,9 +5,9 @@
 # This is required because `openssl` is keg-only in `brew`,
 # see: `brew info openssl` for more information.
 if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
-    local bin_path="/usr/local/opt"
+    bin_path="/usr/local/opt"
 else
-    local bin_path="/opt/homebrew/opt"
+    bin_path="/opt/homebrew/opt"
 fi
 export LDFLAGS="-L${bin_path}/openssl/lib"
 export CPPFLAGS="-I${bin_path}/openssl/include"
@@ -21,6 +21,8 @@ export PATH="/usr/local/bin:$PATH"
 
 # homebrew installs some apps into /usr/local/sbin, e.g. openvpn
 export PATH="/usr/local/sbin:$PATH"
+
+export PATH=~/.local/bin:$PATH
 
 # golang
 export GO111MODULE=auto
