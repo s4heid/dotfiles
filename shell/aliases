@@ -2,7 +2,10 @@
 
 alias vi='~/.local/bin/lvim'
 alias vim='~/.local/bin/lvim'
-alias ll='ls -la'
+alias grep='grep --color'
+alias ls='ls --color -C'
+alias ll='ls -larth --color'
+alias sed='gsed'
 alias be='bundle exec'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
 

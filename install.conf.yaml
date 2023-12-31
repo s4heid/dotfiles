@@ -24,10 +24,10 @@
       path: zsh/zshrc
       create: true
     ~/.tmux.conf: config/tmux.conf
-    ~/.config/nvim/lua/user:
-      path: nvim/.config/nvim/lua/user/*
+    ~/.config/lvim/config.lua:
+      path: nvim/.config/lvim/config.lua
       create: true
-      glob: true
+      force: true
     ~/.gemrc: config/gemrc
     ~/.nvmrc: config/nvmrc
     ~/.gitignore: config/gitignore

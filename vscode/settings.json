@@ -25,7 +25,7 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
     "java.semanticHighlighting.enabled": true,
-    "workbench.colorTheme": "Community Material Theme",
+    "workbench.colorTheme": "Material Theme Ocean",
     "java.configuration.checkProjectSettingsExclusions": false,
     "explorer.confirmDelete": false,
     "workbench.editorAssociations": {

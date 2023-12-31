@@ -7,7 +7,7 @@ fi
 
 echo "Run the Brewfile..."
 brew update
-brew tap Homebrew/bundle
+brew tap homebrew/bundle
 brew bundle --global
 brew cleanup
 
@@ -15,26 +15,26 @@ echo "Install fuzzy finder"
 $(brew --prefix fzf)/install --key-bindings --completion --no-fish --no-update-rc
 
 echo "Install python..."
-py_version="3.10.1"
+py_version="3.12.1"
 if pyenv versions | grep -sq "$py_version"; then
   pyenv install "$py_version"
 else
   echo "Python $py_version already installed"
-  pyenv versions
 fi
-
+pyenv versions
 if pyenv which python | grep -sq "$py_version"; then
   pyenv global "$py_version"
-else
-  echo "Using global python version: $(python -V)"
 fi
 
-echo "Install cf CLI..."  # install via brew, once formula is M1 chip compatible
-cd /tmp
-curl -Ls "https://packages.cloudfoundry.org/stable?release=macosx64-binary&version=v7&source=github" | tar -zx
-mv cf7 /usr/local/bin/cf
-cf version
-cd -
+if [ ! -f $HOME/.pip/pip.conf ]; then
+  [ ! -d $HOME/.pip ] && mkdir $HOME/.pip
+  echo -e "[global]\nrequire-virtualenv=true\ntrusted-host=\n  pypi.python.org\n  pypi.org\n  files.pythonhosted.org" > $HOME/.pip/pip.conf
+fi
+
+echo "Install node..."
+nvm install 21
+nvm use 21
+
 
 # echo "Install gems..."
 # gem install bundler

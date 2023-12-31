@@ -2,8 +2,3 @@ Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
   UseKeychain yes
-
-Host 192.168.*.*
-  StrictHostKeyChecking no
-  User jumpbox
-  UserKnownHostsFile=/dev/null

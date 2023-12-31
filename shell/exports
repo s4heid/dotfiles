@@ -12,7 +12,7 @@ fi
 export LDFLAGS="-L${bin_path}/openssl/lib"
 export CPPFLAGS="-I${bin_path}/openssl/include"
 export PKG_CONFIG_PATH="${bin_path}/openssl/lib/pkgconfig"
-
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
 # ::: Path modifications :::
 
@@ -41,8 +41,8 @@ export PATH="${bin_path}/openvpn/sbin:$PATH"
 
 # ::: Package managers :::
 
-# nvm (commented out because of bad performance; sourced in selected projects only)
-# . "$HOME/.nvmrc"
+# nvm (bad performance)
+. "$HOME"/.nvmrc
 
 # rbenv
 eval "$(rbenv init -)"
@@ -72,7 +72,7 @@ export PROMPT_COMMAND="history -a;$PROMPT_COMMAND" # always save history after e
 # ::: Others :::
 
 # default editor
-export EDITOR=nvim
+export EDITOR="$HOME"/.local/bin/lvim
 
 # encoding
 export LC_ALL=en_US.UTF-8

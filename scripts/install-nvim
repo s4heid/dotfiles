@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
-
 set -e
 
 pip install --upgrade --no-deps --force-reinstall neovim
 pip install --upgrade pynvim
-
 npm install -g neovim
 
-# gem install neovim
-
 mkdir -p ~/.config
-if [[ ! -d ~/.config/nvim ]]; then
-  git clone https://github.com/luan/nvim ~/.config/nvim
+if [[ ! -d ~/.config/lvim ]]; then
+  LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 fi
+
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+fc-cache -f -v
+
+lvim +LvimUpdate +q
