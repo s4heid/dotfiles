@@ -32,8 +32,6 @@ _serve() {
 }
 alias serve=_serve
 
-eval "$(fasd --init auto)" && alias v='f -e nvim'
-
 alias fzf="fzf --height 40% --layout reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias idea="open -na \"IntelliJ IDEA CE.app\" --args \"$*\""

@@ -11,9 +11,9 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [mkdir -p ~/workspace, Creating ~/workspace directory]
     - [mkdir -p ~/scratch, Creating ~/scratch directory]
-    - [mkdir -p ~/git-template, Creating git template directory]
 
 - link:
+    ~/.alacritty.toml: config/alacritty.toml
     ~/.Brewfile: Brewfile
     ~/.bash_profile: config/bash_profile
     ~/.bash_prompt: config/bash_prompt
@@ -26,6 +26,10 @@
     ~/.tmux.conf: config/tmux.conf
     ~/.config/lvim/config.lua:
       path: nvim/.config/lvim/config.lua
+      create: true
+      force: true
+    ~/.config/starship.toml:
+      path: config/starship.toml
       create: true
       force: true
     ~/.gemrc: config/gemrc

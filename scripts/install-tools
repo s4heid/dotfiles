@@ -17,14 +17,11 @@ $(brew --prefix fzf)/install --key-bindings --completion --no-fish --no-update-r
 echo "Install python..."
 py_version="3.12.1"
 if pyenv versions | grep -sq "$py_version"; then
-  pyenv install "$py_version"
-else
   echo "Python $py_version already installed"
+else
+  pyenv install "$py_version"
 fi
-pyenv versions
-if pyenv which python | grep -sq "$py_version"; then
-  pyenv global "$py_version"
-fi
+pyenv global "$py_version"
 
 if [ ! -f $HOME/.pip/pip.conf ]; then
   [ ! -d $HOME/.pip ] && mkdir $HOME/.pip
@@ -32,6 +29,7 @@ if [ ! -f $HOME/.pip/pip.conf ]; then
 fi
 
 echo "Install node..."
+. "$(brew --prefix nvm)"/nvm.sh
 nvm install 21
 nvm use 21
 

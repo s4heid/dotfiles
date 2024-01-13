@@ -2,10 +2,10 @@
 
 set -e
 
-mkdir ./tmp && cd tmp
+mkdir -p ./tmp && cd tmp
 
 # src: https://hci.rwth-aachen.de/usgermankeyboard
-curl -O -L -J "https://hci.rwth-aachen.de/index.php?option=com_attachments&task=download&id=2764"
+curl -O -L -J "https://hci.rwth-aachen.de/get-attachment/2764?fallback=/files/migrated/files/USGerman-Keyboard-Layout-0.98-Retina.zip&filename=USGerman%20Keyboard%20Layout%200.98%20Retina.zip"
 
 layout="USGerman Keyboard Layout 0.98 Retina"
 unzip -o "$layout".zip

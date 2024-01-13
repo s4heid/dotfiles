@@ -12,9 +12,8 @@ ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
-ms-vscode.vscode-typescript-tslint-plugin
+ms-vscode-remote.remote-containers
 ms-vsliveshare.vsliveshare
-onsi.vscode-ginkgo
 redhat.vscode-yaml
 VisualStudioExptTeam.intellicode-api-usage-examples
 vscjava.vscode-java-debug
