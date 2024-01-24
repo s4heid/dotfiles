@@ -4,7 +4,7 @@
 
 # This is required because `openssl` is keg-only in `brew`,
 # see: `brew info openssl` for more information.
-if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+if [ "$(sysctl -n sysctl.proc_translated >/dev/null 2>&1)" = "1" ]; then
     bin_path="/usr/local/opt"
 else
     bin_path="/opt/homebrew/opt"

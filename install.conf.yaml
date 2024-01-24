@@ -11,9 +11,10 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [mkdir -p ~/workspace, Creating ~/workspace directory]
     - [mkdir -p ~/scratch, Creating ~/scratch directory]
+    - [mkdir -p ~/.config/alacritty, Creating .config directory, if not present]
 
 - link:
-    ~/.alacritty.toml: config/alacritty.toml
+    ~/.config/alacritty/alacritty.toml: config/alacritty.toml
     ~/.Brewfile: Brewfile
     ~/.bash_profile: config/bash_profile
     ~/.bash_prompt: config/bash_prompt
