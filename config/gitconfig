@@ -1,6 +1,6 @@
 [user]
   name = Sebastian Heid
-  email = sebastian.heid45@gmail.com
+  email = 8442432+s4heid@users.noreply.github.com
 [github]
   user = s4heid
 [core]
@@ -16,7 +16,7 @@
   lol = log -n 10 --graph --decorate --oneline --all
   lg = log -n 10 --graph --pretty=format:\"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative
   history = log --graph --pretty=format:\"%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative
-  suri = submodule update --recursive --init --jobs 8
+  suri = submodule update --recursive --init --jobs 12
   sso = show --stat --oneline
   alias = "!git config -l | grep alias | cut -c 7- | sort"
   snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
@@ -81,10 +81,19 @@
   separator = red
   selected = white
 [trailer]
-	ifexists = addIfDifferent
+  ifexists = addIfDifferent
 [pull]
   ff = only
 [init]
   defaultBranch = main
 [gpg]
   program = gpg
+[commit]
+  gpgsign = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[http]
+  cookiefile = ~/.gitcookies

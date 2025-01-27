@@ -11,4 +11,3 @@ live_config_reload = true
   padding = { x = 4, y = 2 }
   decorations = "None"
   opacity = 0.99
-

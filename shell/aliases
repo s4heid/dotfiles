@@ -8,6 +8,7 @@ alias ll='ls -larth --color'
 alias sed='gsed'
 alias be='bundle exec'
 alias tmate-info="tmate display -p '#{tmate_ssh}'"
+alias tmux-info="tmux lsk -N|more"
 
 alias k='kubectl' && complete -F __start_kubectl k
 alias kns='kubectl config set-context --current --namespace '

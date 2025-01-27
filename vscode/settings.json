@@ -25,15 +25,12 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
     "java.semanticHighlighting.enabled": true,
-    "workbench.colorTheme": "Material Theme Ocean",
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
     "java.configuration.checkProjectSettingsExclusions": false,
     "explorer.confirmDelete": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "go.toolsManagement.autoUpdate": true,
-    "material-icon-theme.folders.color": "#ef5350",
-    "workbench.editor.showTabs": "single",
     "security.workspace.trust.untrustedFiles": "open",
     "[markdown]": {
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -42,9 +39,7 @@
     "workbench.editor.enablePreview": false,
     "editor.renderControlCharacters": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "markdownlint.config": {},
     "markdown.updateLinksOnFileMove.enabled": "prompt",
-    "editor.detectIndentation": false,
     "hediet.vscode-drawio.theme": "Kennedy",
     "[dart]": {
         "editor.formatOnSave": true,

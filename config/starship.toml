@@ -9,3 +9,15 @@ format = 'via [$symbol($version )($mod_version )]($style)'
 
 [nodejs]
 disabled = true
+
+[direnv]
+disabled = false
+format = "[$symbol$loaded+$allowed]($style) "
+symbol = "🍃 "
+style = "bold bright-green"
+
+[localip]
+disabled = false
+
+[kubernetes]
+disabled = false

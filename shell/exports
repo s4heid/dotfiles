@@ -10,7 +10,7 @@ else
     bin_path="/opt/homebrew/opt"
 fi
 export LDFLAGS="-L${bin_path}/openssl/lib"
-export CPPFLAGS="-I${bin_path}/openssl/include"
+export CPPFLAGS="-I${bin_path}/openssl/include -I${bin_path}/openjdk/include"
 export PKG_CONFIG_PATH="${bin_path}/openssl/lib/pkgconfig"
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
@@ -31,8 +31,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:${bin_path}/go/libexec/bin:$GOPATH/bin
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/sapmachine-11.jdk/Contents/Home
-export PATH="$PATH:$JAVA_HOME/bin"
+export JAVA_HOME=/opt/homebrew/opt/openjdk
+export PATH="${JAVA_HOME}/bin:$PATH"
 
 export PATH="${bin_path}/openssl/bin:$PATH"
 export PATH="${bin_path}/openvpn/sbin:$PATH"
