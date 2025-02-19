@@ -79,6 +79,13 @@ export LC_ALL=en_US.UTF-8
 # vscode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# flutter
+export PATH=$HOME/workspace/flutter/bin:$PATH
+
+# gem
+export GEM_HOME=$HOME/.gem
+export PATH=$HOME/.gem/bin:$PATH
+
 # gpg
 export GPG_TTY=$(tty)
 eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"

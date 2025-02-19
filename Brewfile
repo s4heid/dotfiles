@@ -88,12 +88,12 @@ brew "cloudfoundry/tap/bosh-cli"
 brew "git-duet/tap/git-duet"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 
-cask "alacritty"
 # cask "caffeine"
 cask "citrix-workspace"
 cask "discord"
 cask "docker"
 cask "flycut"
+cask "ghostty"
 cask "google-chrome"
 cask "iterm2"
 cask "keymapp"

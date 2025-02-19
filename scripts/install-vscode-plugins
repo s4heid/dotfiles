@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-cat vscode/extensions.txt | xargs -P8 -I{} code --install-extension {} --force

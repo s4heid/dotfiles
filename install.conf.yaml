@@ -11,10 +11,11 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [mkdir -p ~/workspace, Creating ~/workspace directory]
     - [mkdir -p ~/scratch, Creating ~/scratch directory]
-    - [mkdir -p ~/.config/alacritty, Creating .config directory, if not present]
 
 - link:
-    ~/.config/alacritty/alacritty.toml: config/alacritty.toml
+    ~/.config/ghostty/config:
+      path: config/ghostty
+      create: true
     ~/.Brewfile: Brewfile
     ~/.bash_profile: config/bash_profile
     ~/.bash_prompt: config/bash_prompt
@@ -25,10 +26,6 @@
       path: zsh/zshrc
       create: true
     ~/.tmux.conf: config/tmux.conf
-    ~/.config/lvim/config.lua:
-      path: nvim/.config/lvim/config.lua
-      create: true
-      force: true
     ~/.config/starship.toml:
       path: config/starship.toml
       create: true
@@ -58,5 +55,4 @@
     - [./scripts/install-tools, Installing tools]
     - [./scripts/install-nvim, Installing neovim]
     - [./scripts/install-tmux, Installing tmux]
-    - [./scripts/install-vscode-plugins, Installing vscode plugins]
     - [./scripts/setup-macos, Configuring macos settings]
