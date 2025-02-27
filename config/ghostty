@@ -1,0 +1,24 @@
+auto-update = check
+
+shell-integration-features = no-cursor
+cursor-style = block
+
+font-family = Source Code Pro
+font-family-bold = Source Code Pro Bold
+font-family-italic = Source Code Pro Italic
+font-family-bold-italic = Source Code Pro Italic Bold Italic
+
+keybind = global:alt+shift+ctrl+cmd+space=toggle_quick_terminal
+
+macos-icon = glass
+macos-icon-frame = aluminum
+mouse-hide-while-typing = true
+macos-titlebar-style = hidden
+
+theme = Ayu Mirage
+
+quick-terminal-position = bottom
+
+window-colorspace = display-p3
+window-save-state = always
+
