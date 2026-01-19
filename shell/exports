@@ -5,22 +5,22 @@
 # This is required because `openssl` is keg-only in `brew`,
 # see: `brew info openssl` for more information.
 if [ "$(sysctl -n sysctl.proc_translated >/dev/null 2>&1)" = "1" ]; then
-    bin_path="/usr/local/opt"
+    brew_path="/usr/local"
 else
-    bin_path="/opt/homebrew/opt"
+    brew_path="/opt/homebrew"
 fi
-export LDFLAGS="-L${bin_path}/openssl/lib"
-export CPPFLAGS="-I${bin_path}/openssl/include -I${bin_path}/openjdk/include"
-export PKG_CONFIG_PATH="${bin_path}/openssl/lib/pkgconfig"
+export LDFLAGS="-L${brew_path}/opt/openssl/lib"
+export CPPFLAGS="-I${brew_path}/opt/openssl/include -I${brew_path}/opt/openjdk/include"
+export PKG_CONFIG_PATH="${brew_path}/opt/openssl/lib/pkgconfig"
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
 # ::: Path modifications :::
 
 # prefer /usr/local before others. homebrew installs things in there. otherwise e.g. git would clash
-export PATH="/usr/local/bin:$PATH"
+export PATH="${brew_path}/bin:$PATH"
 
 # homebrew installs some apps into /usr/local/sbin, e.g. openvpn
-export PATH="/usr/local/sbin:$PATH"
+export PATH="${brew_path}/sbin:$PATH"
 
 export PATH=~/.local/bin:$PATH
 
@@ -28,14 +28,14 @@ export PATH=~/.local/bin:$PATH
 export GO111MODULE=auto
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:${bin_path}/go/libexec/bin:$GOPATH/bin
+export PATH=$PATH:${brew_path}/opt/go/libexec/bin:$GOPATH/bin
 
 # java
-export JAVA_HOME=/opt/homebrew/opt/openjdk
+export JAVA_HOME=${brew_path}/opt/openjdk
 export PATH="${JAVA_HOME}/bin:$PATH"
 
-export PATH="${bin_path}/openssl/bin:$PATH"
-export PATH="${bin_path}/openvpn/sbin:$PATH"
+export PATH="${brew_path}/opt/openssl/bin:$PATH"
+export PATH="${brew_path}/opt/openvpn/sbin:$PATH"
 
 
 # ::: Package managers :::
@@ -89,9 +89,6 @@ eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
 
 # homebrew
 export HOMEBREW_NO_ANALYTICS=1  # do not send statistics to homebrew
-
-# lastpass
-export LPASS_AGENT_TIMEOUT=28800  # logout from lpass after 8 hours
 
 # git-duet
 export GIT_DUET_GLOBAL=true
