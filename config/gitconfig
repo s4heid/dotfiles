@@ -6,6 +6,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  autocrlf = input
 [alias]
   st = status
   ci = commit -v

@@ -23,6 +23,7 @@ alias humantime='python -c "from datetime import datetime; import sys; print(dat
 
 # Display local ip address
 alias localip="ipconfig getifaddr en0"
+alias myip="curl -sSL https://api.ipify.org"
 
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
